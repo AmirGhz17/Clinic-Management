@@ -120,7 +120,7 @@ public class Staff extends ClinicMember {
                  }
                  this.setPersonalID(Long.parseLong(personalIDField.getText()));
                     DataCenter.updateInfo("staff", "personalID", this.getID(), Long.parseLong(personalIDField.getText()));
-                    AlertBox.display("change", "your name has successsfully changed");
+                    AlertBox.display("change", "your personalID has successsfully changed");
             }
         }catch(IndexOutOfBoundsException c){
             AlertBox.display("error", "thers's already a person with this ID in our system ");

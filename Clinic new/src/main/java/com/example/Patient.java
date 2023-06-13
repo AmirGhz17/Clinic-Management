@@ -614,6 +614,9 @@ public class Patient extends Person implements GlobalFunctions {
         window.show();
     }
 
+    public String getPatientName(){
+        return (this.getFirstName()+" "+this.getLastName());
+    }
 }
 
 

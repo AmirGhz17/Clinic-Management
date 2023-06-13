@@ -470,11 +470,11 @@ public class Admin extends Person{
                      throw new Exception();
                 }
                 AlertBox.display("success", "the user successfully added");
-                Staff staff = new Staff(firstNameField.getText(),lastNameField.getText(),addressField.getText(),
+                Doctor doctor = new Doctor(firstNameField.getText(),lastNameField.getText(),addressField.getText(),
                         birthDateField.getText(),Long.parseLong(personalIDField.getText()),Long.parseLong(salaryField.getText()),
-                        nightShifButton.isSelected(),organceButton.isSelected(),passwordField.getText());
+                        nightShifButton.isSelected(),organceButton.isSelected(),passwordField.getText(),passwordField.getText());
                
-                DataCenter.saveStaff(hospital, staff);
+                DataCenter.saveDoctor(hospital, doctor);
     
                 }catch (Exception c){
                 System.out.println(c);
@@ -713,7 +713,7 @@ public class Admin extends Person{
         System.out.println(123);
         Stage window = new Stage();
         TableView patientTable = new TableView<>();
-        window.setTitle("Visit List");
+        window.setTitle("Reserve List");
         TableColumn<Patient,Long > IDColumn = new TableColumn<>("ID");
         IDColumn.setMinWidth(100);
         IDColumn.setCellValueFactory(new PropertyValueFactory<>("ID") );
@@ -740,7 +740,7 @@ public class Admin extends Person{
     public void getNurseList(Hospital hospital){
         Stage window = new Stage();
         TableView patientTable = new TableView<>();
-        window.setTitle("Visit List");
+        window.setTitle("Nurse List");
         TableColumn<Patient,Long > IDColumn = new TableColumn<>("ID");
         IDColumn.setMinWidth(100);
         IDColumn.setCellValueFactory(new PropertyValueFactory<>("ID") );
@@ -781,7 +781,7 @@ public class Admin extends Person{
     public void getStaffList(Hospital hospital){
         Stage window = new Stage();
         TableView patientTable = new TableView<>();
-        window.setTitle("Visit List");
+        window.setTitle("Staff List");
         TableColumn<Patient,Long > IDColumn = new TableColumn<>("ID");
         IDColumn.setMinWidth(100);
         IDColumn.setCellValueFactory(new PropertyValueFactory<>("ID") );
@@ -822,7 +822,7 @@ public class Admin extends Person{
     public void getDoctorList(Hospital hospital){
         Stage window = new Stage();
         TableView patientTable = new TableView<>();
-        window.setTitle("Visit List");
+        window.setTitle("Doctor List");
         TableColumn<Patient,Long > IDColumn = new TableColumn<>("ID");
         IDColumn.setMinWidth(100);
         IDColumn.setCellValueFactory(new PropertyValueFactory<>("ID") );
@@ -866,7 +866,7 @@ public class Admin extends Person{
     public void getPatientList(Hospital hospital){
         Stage window = new Stage();
         TableView patientTable = new TableView<>();
-        window.setTitle("Visit List");
+        window.setTitle("Patient List");
         TableColumn<Patient,Long > IDColumn = new TableColumn<>("ID");
         IDColumn.setMinWidth(100);
         IDColumn.setCellValueFactory(new PropertyValueFactory<>("ID") );
@@ -889,7 +889,7 @@ public class Admin extends Person{
         birthDateColumn.setMinWidth(100);
         birthDateColumn.setCellValueFactory(new PropertyValueFactory<>("birthDate") );
 
-        patientTable.setItems(FXCollections.observableArrayList(hospital.getStaff()));
+        patientTable.setItems(FXCollections.observableArrayList(hospital.getPatients()));
         patientTable.getColumns().addAll(IDColumn,randomIDColumn,firstNameColumn,lastNameColumn,personalIDColumn,addressColumn,birthDateColumn);
         VBox layout = new VBox(patientTable);
         Scene scene = new Scene(layout);

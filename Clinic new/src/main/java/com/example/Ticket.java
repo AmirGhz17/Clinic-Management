@@ -25,7 +25,6 @@ public abstract class Ticket {
         this.doctor = doctor;
         this.timestamp = timestamp;
         this.randomID= randomID;
-
         this.ID=ID;
     }
     public Patient getPatient() {

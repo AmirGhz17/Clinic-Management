@@ -15,7 +15,7 @@ public class App extends Application {
     @Override
     public void start(Stage window) throws Exception {
 
-        Hospital hospital=new Hospital("Amir",1382);
+        Hospital hospital=new Hospital("Amir",352);
         getClass= getClass().getResource("menu.css").toExternalForm();
         DataCenter dataCenter=new DataCenter();
         dataCenter.loadAll(hospital);
